@@ -134,8 +134,6 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.user.user_details',
 )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '496451043148-vitr4nj9ju0f60hoqsd46m50305kpkgi.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'f5AHHwLiENuF4hDt0Z7w0iqD'
 
 
 AUTH_USER_MODEL = 'accounts.Usuario'
