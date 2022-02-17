@@ -1,0 +1,124 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block conteudo %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Mosaico</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Mosaico</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-sm-11">
+
+            <div class="card card-primary card-tabs">
+              <div class="card-header p-0 pt-1">
+                <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Mosaico 1</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">Mosaico 2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-one-messages-tab" data-toggle="pill" href="#custom-tabs-one-messages" role="tab" aria-controls="custom-tabs-one-messages" aria-selected="false">Mosaico 4</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="custom-tabs-one-tabContent">
+                  <div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
+
+                     <div class="col-md-11"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                       <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">
+                           <img src="{% url 'videostream' stream_path='video' %}" class="img-fluid mb-2 embed-responsive-item"  alt="white sample" />
+                        </a>
+                     </div>
+
+                  </div>
+
+                  <div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel" aria-labelledby="custom-tabs-one-profile-tab">
+                    <div class="row">
+                    <div class="col-sm-6"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">
+                           <img src="{% url 'videostream' stream_path='video' %}" class="img-fluid mb-2 embed-responsive-item"  alt="white sample" />
+                        </a>
+                    </div>
+                    <div class="col-sm-6"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">
+                          <img src="{% url 'videostream' stream_path='video' %}" class="img-fluid mb-2 embed-responsive-item"  alt="white sample" />
+                        </a>
+                     </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
+                    <div class="row">
+                    <div class="col-sm-6">
+                        <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">
+                          <img src="{% url 'videostream' stream_path='video' %}" class="img-fluid mb-2 embed-responsive-item"  alt="white sample" />
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">
+                          <img src="{% url 'videostream' stream_path='video' %}" class="img-fluid mb-2 embed-responsive-item"  alt="white sample" />
+                        </a>
+                     </div>
+                    <div class="col-sm-6">
+                        <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">
+                          <img src="{% url 'videostream' stream_path='video' %}" class="img-fluid mb-2 embed-responsive-item"  alt="white sample" />
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">
+                          <img src="{% url 'videostream' stream_path='video' %}" class="img-fluid mb-2 embed-responsive-item"  alt="white sample" />
+                        </a>
+                     </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+<script type="text/javascript">
+function dragStart(event){
+	event.dataTransfer.setData('text', event.target.id);
+}
+
+function allowDrop(event){
+	event.preventDefault();
+}
+
+function drop(event){
+   var imageId = event.dataTransfer.getData('text'),
+   image = document.getElementById(imageId);
+   event.target.appendChild(image);
+}
+</script>
+
+{% endblock conteudo %}
