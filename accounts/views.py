@@ -56,6 +56,7 @@ def deslogar_usuario(request):
     logout(request)
     return redirect('logar_usuario')
 
+
 def reset_senha_usuario(request):
 
     if request.method == "POST":
